@@ -1,5 +1,6 @@
-
+/*globals app */
 app.factory("OpsFactory", function() {
+	'use strict';
 	function pushTo(a, n) {
 		a.forEach(function(v,i) {
 			a[i] = v+n;

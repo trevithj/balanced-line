@@ -1,9 +1,11 @@
 /*globals angular, d3, console */
+/*jslint indent: 4, maxerr: 50, white: true, todo: true */
+
 //Balanced line app
-"use strict";
 var app = angular.module("DiceGame",[]);
 
 app.controller("GameCtrl", function($scope, $interval) {
+	"use strict";
 	var runner = null;
 	$scope.count = 0;
 	function stop() {

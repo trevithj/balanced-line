@@ -1,7 +1,9 @@
 /*
 	Assume that the directive applies to a div attribute.
 */
+/*globals app */
 app.directive("jtLineHtml", function(OpsFactory) {
+	'use strict';
 	function processAll(ops) {
 		ops.forEach(function(op) {
 			op.process();
@@ -17,9 +19,10 @@ app.directive("jtLineHtml", function(OpsFactory) {
 		controller: function($scope) {
 			$scope.ops = [];
 			$scope.stores.forEach(function(store, i) {
+				var rate, runtime;				
 				if(i>0) {
-					var rate = $scope.failrate[i-1];
-					var runtime = $scope.runtimes[i-1];
+					rate = $scope.failrate[i-1];
+					runtime = $scope.runtimes[i-1];
 					$scope.ops.push(OpsFactory.make(
 						$scope.stores[i-1],
 						$scope.stores[i],
